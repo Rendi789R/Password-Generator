@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Password Generator</title>
+    <link href="style/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-blue-900 to-blue-600 flex justify-center items-center p-5">
+    <div class="container bg-white/95 p-8 rounded-xl shadow-2xl max-w-md w-full">
+        <h1 class="text-3xl font-bold text-blue-900 text-center mb-6">Secure Password Generator</h1>
+        <p class="text-gray-600 text-center mb-8 leading-relaxed">
+            Create strong, unique passwords instantly with our secure password generator. 
+            Customize your password with various options to meet your security needs.
+        </p>
+
+        <div class="relative bg-gray-50 p-4 rounded-lg border-2 border-dashed border-blue-900 text-center mb-6">
+            <span class="text-lg text-gray-700">Click Generate to create password</span>
+            <button class="copy-btn absolute right-3 top-1/2 -translate-y-1/2 text-blue-900 hover:text-blue-700 p-2" title="Copy to clipboard">📋</button>
+        </div>
+
+        <div class="space-y-6">
+            <div class="flex items-center gap-4">
+                <label class="text-gray-700 min-w-fit">Password Length:</label>
+                <input type="range" min="8" max="32" value="16" id="length" 
+                    class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                <span id="lengthValue" class="text-gray-700 min-w-[2rem] text-center">16</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <label class="flex items-center gap-2 text-gray-700">
+                    <input type="checkbox" id="uppercase" checked
+                        class="w-4 h-4 text-blue-900 rounded focus:ring-blue-900">
+                    Uppercase Letters
+                </label>
+                <label class="flex items-center gap-2 text-gray-700">
+                    <input type="checkbox" id="lowercase" checked
+                        class="w-4 h-4 text-blue-900 rounded focus:ring-blue-900">
+                    Lowercase Letters
+                </label>
+                <label class="flex items-center gap-2 text-gray-700">
+                    <input type="checkbox" id="numbers" checked
+                        class="w-4 h-4 text-blue-900 rounded focus:ring-blue-900">
+                    Numbers
+                </label>
+                <label class="flex items-center gap-2 text-gray-700">
+                    <input type="checkbox" id="symbols"
+                        class="w-4 h-4 text-blue-900 rounded focus:ring-blue-900">
+                    Special Characters
+                </label>
+            </div>
+
+            <button class="generate w-full bg-blue-900 text-white py-3 px-6 rounded-lg 
+                font-medium hover:bg-blue-800 transition-colors duration-200 
+                focus:outline-none focus:ring-2 focus:ring-blue-900 focus:ring-offset-2">
+                Generate Password
+            </button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
